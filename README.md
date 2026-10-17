@@ -1,6 +1,6 @@
 # GitStory — Visual GitHub Repository Explorer
 
-> **Live app:** [https://gitstory-frontend.onrender.com](#)<br>
+> **Live app:https://gitstory-frontend.onrender.com
 > **Demo video:** [Add the project video URL here](#)
 
 ## Problem
