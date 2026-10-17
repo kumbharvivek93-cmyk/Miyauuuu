@@ -1,156 +1,246 @@
-Ask User
-Completed with input: {
-  "message": "Let’s fill the README details. First, what is your team name? If you haven’t chosen one yet, say “not decided.”",
-  "requestedSchema": {
-    "properties": {
-      "team_name": {
-        "type": "string",
-        "title": "Team name",
-        "description": "Enter the team name exactly as you want it shown in the README."
-      }
-    }
-  }
-}
+# 🌳 GitStory — Turn Your GitHub Repository into a Tree
 
-Ask User
-Completed with input: {
-  "message": "Great. Who are the team members? Please give each member’s name and, if you want, their role or contribution. You can list multiple people in one response.",
-  "requestedSchema": {
-    "properties": {
-      "team_members": {
-        "type": "string",
-        "title": "Team members",
-        "description": "For example: Vivek Kumbhar — Backend and deployment; Name — Frontend."
-      }
-    }
-  }
-}
+<p align="center">
+  <strong>Every repository has a story. GitStory helps you visualize it.</strong>
+</p>
 
-Ask User
-Completed with input: {
-  "message": "What project title and short overview should the README use? Tell me in your own words what GitStory does and who it helps.",
-  "requestedSchema": {
-    "properties": {
-      "project_title": {
-        "type": "string",
-        "title": "Project title",
-        "default": "GitStory — GitHub Repository Explorer"
-      }
-    },
-    "project_overview": {
-      "type": "string",
-      "title": "Project overview",
-      "description": "Describe what the project does and who it is for, in your own words."
-    }
-  }
-}
+<p align="center">
+  <a href="https://gitstory-frontend.onrender.com/">🚀 Live Demo</a> •
+  <a href="https://youtu.be/0GvRJxOoypw?si=t9dqNk4MsBuHscva">🎥 Watch Demo</a> •
+  <a href="https://github.com/kumbharvivek93-cmyk">👨‍💻 Developer</a>
+</p>
 
-Ask User
-Completed with input: {
-  "message": "What should the project overview say? In your own words, describe what the app lets people do and what problem it solves. I’ll polish the wording for the README.",
-  "requestedSchema": {
-    "properties": {
-      "overview": {
-        "type": "string",
-        "title": "Project overview",
-        "description": "A rough sentence or two is enough."
-      }
-    }
-  }
-}
+## 🎯 1. Problem Statement
 
-Ask User
-Completed with input: {
-  "message": "I’ll use the project’s existing stack: React, Vite, Recharts, Lucide React, Python, FastAPI, SQLAlchemy, SQLite, GitHub REST API, optional OpenAI API, and Render. Is that accurate, or should any technology be added or removed?",
-  "requestedSchema": {
-    "properties": {
-      "stack_confirmation": {
-        "type": "string",
-        "title": "Tech stack",
-        "enum": [
-          "Yes, use this stack",
-          "I need to change it"
-        ],
-        "default": "Yes, use this stack"
-      },
-      "changes": {
-        "type": "string",
-        "title": "Changes (if any)",
-        "description": "If you chose to change it, list technologies to add or remove."
-      }
-    }
-  }
-}
+GitHub repositories can become difficult to understand as projects grow. Developers often need to explore nested directories, hundreds of files, commit histories, contributor activity, and programming-language statistics to understand a codebase.
 
-Ask User
-Completed with input: {
-  "message": "What role or contributions should I list for Vivek Dadaso Kumbhar? If this is a solo project and you prefer no role listed, say “no role.”",
-  "requestedSchema": {
-    "properties": {
-      "role": {
-        "type": "string",
-        "title": "Role or contribution",
-        "description": "For example: Full-stack development, UI/UX, backend, deployment, or no role."
-      }
-    }
-  }
-}
+Traditional repository browsing can make it challenging to see the overall project structure and development patterns at a glance.
 
-Ask User
-Completed with input: {
-  "message": "The deployed app appears to be https://gitstory-frontend.onrender.com/. Is that the link you want in the README, and what is your demo video URL? If you don’t have one yet, say “not ready” and I’ll leave a clear placeholder.",
-  "requestedSchema": {
-    "properties": {
-      "deployed_link": {
-        "type": "string",
-        "title": "Deployed app link",
-        "default": "https://gitstory-frontend.onrender.com/"
-      },
-      "demo_video_link": {
-        "type": "string",
-        "title": "Demo video link",
-        "description": "Paste the video URL, or enter “not ready” to use a placeholder."
-      }
-    }
-  }
-}
+**The challenge:** How can we make GitHub repositories easier to explore, understand, and analyze through an intuitive visual experience?
 
-```markdown
-# GitStory — GitHub Repository Explorer
+## 💡 2. Solution
 
-## Team Name
+**GitStory** is a web application that transforms GitHub repository data into a visual and analytical experience.
 
-Miyauuuu
+Its central concept is a tree analogy:
 
-## Team Members
+- 🌱 **Root → Repository:** The root represents the entire GitHub repository.
+- 🌿 **Branches → Directories:** Branches represent folders and nested directories.
+- 🍃 **Leaves → Files:** Leaves represent individual files within the project.
 
-- Vivek Dadaso Kumbhar — Solo developer
+Alongside repository visualization, GitStory brings repository analytics and optional AI-powered insights into one interface, helping developers understand project structure, technologies, contributors, and development activity.
 
-## Project Overview
+## ✨ 3. Features
 
-GitStory is a web application that helps users understand GitHub repositories at a glance. By entering a repository name, users can explore its details, commit history and activity, contributors, programming languages, file structure, and frequently changed files in one visual dashboard.
+- 🌳 **Repository Visualization:** Explore repository structure using a tree-inspired mental model.
+- 📁 **Directory and File Exploration:** Understand how folders and files are organized.
+- 📊 **Repository Analytics:** Explore development activity and repository statistics.
+- 🕒 **Commit Analysis:** Review commit history and development patterns.
+- 👥 **Contributor Analytics:** Understand contributor activity.
+- 💻 **Language Distribution:** Explore the programming languages used in a repository.
+- 🔎 **Frequently Modified Files:** Identify files that receive repeated changes.
+- 🤖 **AI-Powered Insights:** Generate natural-language repository summaries when AI integration is configured.
+- ⚡ **API Integration:** Retrieve repository data through GitHub's API.
+- 🛡️ **Error Handling:** Handle common API errors, missing repositories, and rate limits.
 
-## Tech Stack and Justification
+## 🛠️ 4. Tech Stack
 
-| Technology | How it is used | Why it was chosen |
-|---|---|---|
-| **React** | Builds the interactive frontend dashboard. | Its reusable components help organize the interface and make features easier to maintain. |
-| **Vite** | Runs the frontend during development and builds it for production. | It provides a fast development workflow and creates optimized files for deployment. |
-| **Recharts** | Displays commit activity and language data as charts. | Visual charts make repository statistics easier to understand at a glance. |
-| **Lucide React** | Provides icons throughout the interface. | It offers a consistent collection of icons that integrates well with React. |
-| **Python** | Powers the backend application and data-processing logic. | Its readable syntax and broad ecosystem make it suitable for building the API. |
-| **FastAPI** | Provides the backend REST API. | It supports asynchronous endpoints, request validation, and automatic API documentation. |
-| **SQLAlchemy** | Handles database models and database access. | It keeps data operations structured and makes the application’s database code easier to maintain. |
-| **SQLite** | Stores cached API responses and recent searches. | It requires no separate database server, keeping setup simple for this project. |
-| **GitHub REST API** | Supplies repository details, commits, contributors, languages, and file-tree information. | It provides the GitHub data the dashboard needs without requiring repositories to be cloned. |
-| **OpenAI API (optional)** | Generates AI summaries of repositories. | It provides an optional natural-language overview when an OpenAI API key is configured. |
-| **Render** | Hosts the frontend website and backend API as separate services. | It deploys both parts of the application from the project repository. |
+| Component | Technologies |
+|---|---|
+| Frontend | React 18, JavaScript |
+| Build Tool | Vite |
+| Routing | React Router |
+| Charts | Recharts |
+| Icons | Lucide React |
+| Backend | Python, FastAPI |
+| HTTP Client | HTTPX |
+| External API | GitHub REST API |
+| Database / ORM | SQLite-compatible setup, SQLAlchemy |
+| Validation | Pydantic |
+| AI Integration | OpenAI API |
+| Environment Variables | python-dotenv |
+| ASGI Server | Uvicorn |
+| Deployment | Render |
+| Version Control | Git, GitHub |
 
-## Deployed Application
+## 🧠 5. Tech-Stack Justification
 
-[Open GitStory](https://gitstory-frontend.onrender.com/)
+**React and Vite:** React enables reusable UI components and interactive repository dashboards, while Vite provides a fast development experience and production builds.
 
-## Demo Video
+**FastAPI:** Provides structured REST endpoints, request validation, automatic API documentation, and support for asynchronous operations.
 
-[Add the demo video link here](PASTE_YOUR_DEMO_VIDEO_LINK_HERE)
+**GitHub REST API:** Supplies repository metadata, file-tree information, commits, contributors, and language statistics without requiring users to upload their repositories.
+
+**HTTPX:** Supports asynchronous HTTP requests to external services, helping the backend communicate efficiently with GitHub and AI providers.
+
+**SQLAlchemy and SQLite:** Provide a lightweight persistence layer and ORM-based database operations for supported application data and caching.
+
+**Recharts:** Converts numerical repository data into charts that make development patterns easier to understand.
+
+**OpenAI API:** Supports optional AI-generated summaries that explain repository information in natural language.
+
+**Render:** Provides cloud hosting for deploying the web application and making it accessible through a public URL.
+
+## 🚀 6. Setup and Usage
+
+### Prerequisites
+
+- Python 3.10 or newer
+- Node.js and npm
+- Git
+- GitHub token (optional, depending on API usage)
+- OpenAI API key (optional, for AI insights)
+
+### Step 1: Clone the repository
+
+```bash
+git clone <YOUR_GITHUB_REPOSITORY_URL>
+cd Gitstory
 ```
+
+### Step 2: Configure the backend
+
+```bash
+cd backend
+python -m venv .venv
+```
+
+Activate the virtual environment.
+
+**Windows PowerShell:**
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Create a `.env` file in the `backend` directory using `.env.example` as a reference.
+
+Configure the necessary environment variables, for example:
+
+```env
+GITHUB_TOKEN=your_github_token
+OPENAI_API_KEY=your_openai_api_key
+OPENAI_MODEL=gpt-4o-mini
+```
+
+Use the variable names expected by your application. AI credentials are only required when using the corresponding AI features. Never commit real API keys.
+
+### Step 3: Run the backend
+
+From the `backend` directory:
+
+```bash
+uvicorn app.main:app --reload
+```
+
+Backend address:
+
+`http://127.0.0.1:8000`
+
+Interactive API documentation:
+
+`http://127.0.0.1:8000/docs`
+
+### Step 4: Configure the frontend
+
+Open another terminal:
+
+```bash
+cd frontend
+npm install
+```
+
+Create a frontend `.env` file if required:
+
+```env
+VITE_API_URL=http://127.0.0.1:8000/api
+```
+
+Ensure this URL matches the backend API configuration.
+
+### Step 5: Run the frontend
+
+```bash
+npm run dev
+```
+
+Open the local address printed by Vite, usually:
+
+`http://localhost:5173`
+
+### Step 6: Explore GitStory
+
+1. Open GitStory in your browser.
+2. Enter the owner and repository name of a public GitHub project.
+3. Explore the repository's directories and files.
+4. Review available commit, contributor, and language analytics.
+5. Generate AI-powered insights if the feature is configured.
+
+**Note:** API rate limits, repository permissions, and optional credentials may affect available data and features.
+
+## 👨‍💻 7. Team Members
+
+### Vivek Kumbhar — Creator and Developer
+
+- **Role:** Solo Developer / Project Lead
+- **Responsibilities:** Project ideation, application development, frontend and backend integration, GitHub API integration, analytics, AI integration, and deployment.
+- **GitHub:** [@kumbharvivek93-cmyk](https://github.com/kumbharvivek93-cmyk)
+
+GitStory is an independently developed project built to explore a more intuitive way of understanding GitHub repositories.
+
+## 🌐 8. Live Application
+
+🚀 **Try GitStory:** https://gitstory-frontend.onrender.com/
+
+Explore the deployed application and experience the project firsthand.
+
+## 🎥 9. Video Demonstration
+
+▶️ **Watch GitStory's Demo on YouTube:**
+
+https://youtu.be/0GvRJxOoypw?si=t9dqNk4MsBuHscva
+
+Watch the demonstration to understand the project's concept, interface, repository exploration workflow, and available functionality.
+
+## 🔮 10. Future Scope
+
+- 🌲 More interactive and expandable repository tree visualizations.
+- 🔍 Advanced file and directory search.
+- 🧠 Deeper AI-assisted codebase understanding.
+- 📈 Enhanced commit-history and development timeline visualizations.
+- 👥 Contributor collaboration graphs.
+- 🆚 Repository comparison tools.
+- 📄 Exportable repository reports.
+- 🎨 More customization options for visualizing large codebases.
+
+These are planned possibilities rather than a claim that every feature is currently implemented.
+
+## 🤝 11. Contributing
+
+Suggestions, feedback, bug reports, and contributions are welcome.
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Implement and test your changes.
+4. Commit your work with a meaningful message.
+5. Submit a pull request.
+
+Please avoid committing secrets, environment files containing credentials, virtual environments, or generated dependency directories.
+
+## 📜 12. License
+
+A license has not yet been specified. Add a `LICENSE` file to define the terms under which others can use, modify, and distribute the project.
+
+---
+
+<p align="center">
+  <strong>🌳 GitStory — Every Repository Has a Story.</strong>
+  <br/>
+  Built with curiosity, creativity, and code by Vivek Kumbhar.
+</p>
