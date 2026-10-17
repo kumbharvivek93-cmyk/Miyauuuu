@@ -1,0 +1,26 @@
+from datetime import datetime
+
+from pydantic import BaseModel, HttpUrl
+
+
+class RepositoryOwner(BaseModel):
+    login: str
+    avatar_url: HttpUrl
+    html_url: HttpUrl
+
+
+class RepositoryResponse(BaseModel):
+    id: int
+    name: str
+    full_name: str
+    owner: RepositoryOwner
+    description: str | None
+    html_url: HttpUrl
+    stars: int
+    forks: int
+    watchers: int
+    open_issues: int
+    default_branch: str
+    language: str | None
+    created_at: datetime
+    updated_at: datetime
